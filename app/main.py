@@ -41,7 +41,7 @@ def get_db():
     finally:
         db.close()
         
-@app.get("/")
+@app.get("/login/")
 def read_root():
     return JSONResponse(content={"message": "Bienvenido", "status": "active"})
 
