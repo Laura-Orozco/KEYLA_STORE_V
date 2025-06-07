@@ -72,7 +72,7 @@ class Venta(Base):
 
     id_venta = Column(Integer, primary_key=True, index=True)
     id_cliente = Column(Integer, ForeignKey("clientes.id_cliente"), nullable=False)
-    id_usuario = Column(Integer, ForeignKey("usuario.id_usuario"), nullable=False)
+    id_usuario = Column(Integer, ForeignKey("usuarios.id_usuario"), nullable=False)
     id_producto = Column(Integer, ForeignKey("productos.id_producto"), nullable=False)
     precio = Column(DECIMAL(10, 2), nullable=False)
     fecha_venta = Column(DateTime(timezone=True), server_default=func.now())
