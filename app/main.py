@@ -41,9 +41,13 @@ def get_db():
     finally:
         db.close()
         
-@app.get("/login/") 
+@app.get("/")
 def read_root():
-    return {"message": "¡Bienvenido!"}
+    return JSONResponse(content={"message": "Bienvenido", "status": "active"})
+
+@app.get("/login")
+def health_check():
+    return {"status": "ok", "database": "connected"}
 
 # --- RUTAS--------
 
